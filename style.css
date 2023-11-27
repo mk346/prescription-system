@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+}
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 300;
+    width: 300px;
+    height: 100vh;
+    padding: 0 1.9rem;
+    color: #ffffff;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    background-color: #1f0330;
+}
+.logo {
+    height: 80px;
+    padding: 15px;
+}
+.side{
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+.side li{
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.6s ease-in-out;
+}
+.side li:hover,
+    .active {
+    background: #b578d1;
+}
+.side a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.side a span{
+    overflow: hidden;
+}
+.side a i{
+    font-size: 16px;
+}
+.Logout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/* ***** body content ***** */
+.body{ 
+    position: relative;
+    background: #dbd4df;
+    width: 100%;
+    padding: 1rem;
+}
+
+
+
+
+.message-container {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.welcome {
+    background-color: #0e010b;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #bb129f, #24021c);
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.we-serve {
+    background-color: #aa1c1c;
+    color: #ffffff;
+}
+
+.contact-us {
+    background-color: #32126d;
+    color: #4d4d4d;
+}
+
+.message-container h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.message-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666666;
+}
+
+.message-container:hover {
+    transform: scale(1.05);
+}
+
+
+/* Container styles */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-container p {
+    margin-bottom: 15px;
+}
+
+/* Contact information section styles */
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+}
+
+/* Message form styles */
+.message-form {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.message-form h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.message-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-form label {
+    margin-bottom: 5px;
+}
+
+.message-form input[type="email"],
+.message-form input[type="text"],
+.message-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.message-form input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.message-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Profile details section */
+.profile-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-details {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-details h2 {
+    margin-bottom: 15px;
+}
+
+.details p {
+    margin-bottom: 10px;
+}
+
+/* Update buttons */
+.update-buttons {
+    margin-top: 15px;
+}
+
+.update-buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-buttons button:hover {
+    background-color: #0056b3;
+}

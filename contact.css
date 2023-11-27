@@ -1,0 +1,62 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.contact-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+    padding: 20px;
+    width: 80%; /* Adjusted width */
+    text-align: center;
+}
+
+/* Input styling */
+.contact-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 10px; /* Increased padding */
+    margin-bottom: 20px; /* Increased margin-bottom */
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    transition: border-bottom-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
+}
+
+/* Add a subtle box-shadow with theme color on input focus */
+.contact-container input:focus,
+.contact-container textarea:focus {
+    border-bottom-color: #28023a;
+    box-shadow: 0 0 5px rgba(40, 2, 58, 0.5); /* Added box-shadow with theme color on focus */
+}
+
+/* Submit button styling */
+.contact-btn {
+    background-color: #28023a;
+    color: #fff;
+    padding: 12px 20px; /* Increased padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect on the submit button */
+.contact-btn:hover {
+    background-color: #1a0127;
+    transform: scale(1.05); /* Added scale effect on hover */
+}
