@@ -1,3 +1,9 @@
+<?php
+require 'config/config.php';
+require 'includes/login_handler.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +38,7 @@
             font-weight: bold;
         }
 
-        .login-container input {
+        .login-container .login-input {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
@@ -44,7 +50,7 @@
         }
 
         /* Change border color on input focus */
-        .login-container input:focus {
+        .login-container .login-input:focus {
             border-bottom-color: #28023a;
         }
 
@@ -57,7 +63,7 @@
             font-weight: bold;
         }
 
-        .remember-me input {
+        .remember-me .login-input {
             margin-right: 0px;
         }
 
@@ -104,24 +110,30 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="#" method="post">
+        <form action="login.php" method="POST">
             <!-- Username input -->
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <input type="email" id="username" class="login-input" name="email" placeholder="Enter your Email" required>
 
             <!-- Password input -->
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-<!-- Login button -->
-<button type="submit" class="login-btn">Login</button>
-<!-- Forgot password link -->
-<div class="Remember">
-    <label><input type="checkbox">Remember me</label>
-            <a href="#" class="forgot-password">Forgot password? Click here</a>
+            <input type="password" id="password" class="login-input" name="password" placeholder="Enter your password" required>
+            <!-- Login button -->
+            <input type="submit" name="login_btn" class="login-btn" value="Login">
+            <br>
+            <?php 
+                if (in_array("<span style='color: red;'>Email or Password was Incorrect</span><br>", $error_array)) echo "<span style='color: red;'>Email or Password was Incorrect</span><br>";
+            ?>
+            <!-- <button type="submit" class="login-btn">Login</button> -->
+            <!-- Forgot password link -->
+            <div class="Remember">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#" class="forgot-password">Forgot password? Click here</a>
+            </div>
         </form>
 
         <!-- Register link -->
-        <p>Not registered? <a href="#" class="register-link">Register here</a></p>
+        <p>Not registered? <a href="register.php" class="register-link">Register here</a></p>
     </div>
 </body>
 </html>

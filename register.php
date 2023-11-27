@@ -1,3 +1,12 @@
+<?php
+require 'config/config.php';
+require 'includes/register_handler.php';
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +41,7 @@
             font-weight: bold;
         }
 
-        .register-container input,
+        .register-container .input-field,
         .register-container select {
             width: 100%;
             padding: 8px;
@@ -45,7 +54,7 @@
         }
 
         /* Change border color on input focus */
-        .register-container input:focus,
+        .register-container .input-field:focus,
         .register-container select:focus {
             border-bottom-color: #28023a;
         }
@@ -69,14 +78,21 @@
 <body>
     <div class="register-container">
         <h2>Register</h2>
-        <form action="#" method="post">
+        <form action="register.php" method="POST">
             <!-- Your Name input -->
             <label for="Yourname">Your Name:</label>
-            <input type="text" id="Yourname" name="YourName" placeholder="Enter Your name" required>
+            <input type="text" id="Yourname" class="input-field" name="fname" placeholder="Enter Your name" required>
+            <br>
+            <?php
+            if(in_array("<span style='color: red;'>Your name must be between 3 and 25 characters</span><br>", $error_array)){
+                echo "<span style='color: red;'>Your name must be between 3 and 25 characters</span><br>";
+            }
+            
+            ?>
 
             <!-- ID Number input -->
             <label for="idNumber">ID Number:</label>
-            <input type="text" id="idNumber" name="idNumber" placeholder="Enter your ID number" required>
+            <input type="text" id="idNumber" class="input-field"  name="id_number" placeholder="Enter your ID number" required>
 
             <!-- Gender selection -->
             <label for="gender">Gender:</label>
@@ -99,11 +115,11 @@
 
             <!-- Email Address input -->
             <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <input type="email" id="email" name="email" class="input-field"  placeholder="Enter your email address" required>
 
             <!-- Area of Residence dropdown -->
             <label for="areaOfResidence">Area of Residence:</label>
-            <select id="areaOfResidence" name="areaOfResidence" required>
+            <select id="areaOfResidence" name="residence" required>
                 <option value="Algeria">Algeria</option>
                 <option value="Nigeria">Nigeria</option>
                 <option value="South Africa">South Africa</option>
@@ -111,9 +127,33 @@
                 <option value="Egypt">Egypt</option>
                 <!-- Add more African countries as needed -->
             </select>
-
+            <label for="email">Your Password:</label>
+            <input type="password" name="password1" class="input-field" placeholder="Your Password">
+            <br>
+            <?php
+            if(in_array("<span style='color: red;'>Your Passwords do not Match</span><br>", $error_array)){
+                echo "<span style='color: red;'>Your Passwords do not Match</span><br>";
+            }else if(in_array("<span style='color: red;'>Password must contain one Uppercase letter and one Number</span><br>", $error_array)){
+                echo "<span style='color: red;'>Password must contain one Uppercase letter and one Number</span><br>";
+            }else if(in_array("<span style='color: red;'>Password must be between 8 and 32 characters</span><br>", $error_array)){
+                echo "<span style='color: red;'>Password must be between 8 and 32 characters</span><br>";
+            }
+            ?>
+            <label for="email">Confirm Password:</label>
+            <input type="password" name="password2" class="input-field" placeholder="Confirm Password">
             <!-- Submit button -->
-            <button type="submit" class="register-btn">Register</button>
+            <input type="submit" name="btn_save" class="register-btn" value="Register">
+            <br>
+            <?php 
+            if(in_array("<span style='color: #14C800;'>Account Created Successfully</span><br>", $error_array)){
+                echo "<span style='color: #14C800;'>Account Created Successfully</span><br>";
+            }
+            
+            ?>
+
+
+            <p>Already have an account? <a href="login.php" class="register-link">Sign in Here!</a></p>
+            <!-- <button type="submit" class="register-btn">Register</button> -->
         </form>
     </div>
 </body>
